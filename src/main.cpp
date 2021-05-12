@@ -21,6 +21,7 @@ void setup() {
 
   disp.clear();
   disp.brightness(2);
+  disp.displayInt(11);
 
   radio.begin();
 
@@ -40,15 +41,15 @@ void setup() {
   radio.setChannel(0x60); // Channel
 
   // Transiver power level: RF24_PA_MIN, RF24_PA_LOW, RF24_PA_HIGH, RF24_PA_MAX
-  radio.setPALevel (RF24_PA_HIGH);  
+  radio.setPALevel(RF24_PA_HIGH);  
   
   // Exchange rate: RF24_2MBPS, RF24_1MBPS, RF24_250KBPS
   // At the lowest - hight sensitivity and distant 
   // Must be the same s on the receiver
-  radio.setDataRate (RF24_1MBPS); 
+  radio.setDataRate(RF24_1MBPS); 
 
   radio.powerUp(); // Start
-  radio.stopListening();
+  radio.startListening();
 }
 
 void loop() {
