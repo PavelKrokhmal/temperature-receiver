@@ -59,6 +59,4 @@ void loop() {
 
     disp.displayInt(gotByte);
   }
-
-  // delay(1000);
 }
